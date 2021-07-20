@@ -1,13 +1,15 @@
 #include <iostream>
 #include "ArrayBST.h"
-#include "AbstractBST.h"
+#include "BST.h"
+#include "LinkedBST.h"
 using namespace std;
 
 int main()
 {
+    cout<<"ArrayBST:"<<endl<<endl;
     ArrayBinarySearchTree a;
     int value, option;
-    int max, min;
+    int array_max, array_min;
 
     do
     {
@@ -48,14 +50,14 @@ int main()
             break;
 
         case 4:
-            a.max(max);
-            cout << "Max: " << max << endl;
+            a.max(array_max);
+            cout << "Max: " << array_max << endl;
 
             break;
 
         case 5:
-            a.min(min);
-            cout << "Min: " << min << endl;
+            a.min(array_min);
+            cout << "Min: " << array_min << endl;
             break;
 
         default:
@@ -64,5 +66,35 @@ int main()
         }
 
     } while (option != 0);
-    return 0;
+
+    cout<<endl<<endl<<"LinkedBST:"<<endl;
+
+
+    LinkedBST l;
+
+    l.remove(25);
+
+    l.add(25, 1);
+    l.add(30, 1);
+    l.add(20, 3);
+    l.add(27, 3);
+    l.add(33, 3);
+    l.add(32, 9);
+    l.add(10, 4);
+    l.add(24, 4);
+    l.add(8, 5);
+
+    l.inorder();
+    int max, min;
+    l.max(max);
+    l.min(min);
+    cout << "Min: " << min << "  Max: " << max << endl;
+    cout << 10 << ": " << l.exists(10) << endl;
+    cout << 99 << ": " << l.exists(99) << endl;
+    cout << 35 << ": " << l.exists(35) << endl;
+    
+    l.inorder();
+    l.remove(25);
+    l.remove(30);
+    l.inorder();
 }

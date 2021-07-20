@@ -1,6 +1,6 @@
 #include <iostream>
 #include "ArrayBST.h"
-#include "AbstractBST.h"
+// #include "BST.h"
 
 ArrayBinarySearchTree::ArrayBinarySearchTree()
 {
@@ -18,7 +18,7 @@ bool ArrayBinarySearchTree::isEmpty()
     return this->nodes[1] == NULL;
 }
 
-void ArrayBinarySearchTree::add(int key, int value)
+bool ArrayBinarySearchTree::add(int key, int value)
 {
     ArrayNode *newData(new ArrayNode(key, value));
 
@@ -42,6 +42,7 @@ void ArrayBinarySearchTree::add(int key, int value)
     }
 
     std::cout << "Add called" << std::endl;
+    return 1;
 }
 
 bool ArrayBinarySearchTree::exists(int targetKey)

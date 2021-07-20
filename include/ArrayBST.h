@@ -17,7 +17,7 @@ public:
     ~ArrayBinarySearchTree();
 
     bool isEmpty();
-    void add(int key, int value);
+    bool add(int key, int value);
     void max(int &output);
     void min(int &output);
     bool exists(int targetKey);
